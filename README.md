@@ -37,7 +37,7 @@ This version is only compatible with [Meteor 3.0](https://github.com/meteor/mete
 ## Installation
 
 ``` sh
-$ meteor add tmeasday:publish-counts
+$ meteor add akyma:publish-counts
 ```
 
 ## API

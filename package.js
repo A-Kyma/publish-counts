@@ -1,25 +1,24 @@
 Package.describe({
-  name: "tmeasday:publish-counts",
-  summary: "Publish the count of a cursor, in real time",
-  version: "1.0.0-beta.0",
+  name: "akyma:publish-counts",
+  summary: "Publish the count of a cursor, in real time - for Meteor v3",
+  version: "1.0.1",
   git: "https://github.com/percolatestudio/publish-counts.git"
 });
 
 Package.onUse(function (api, where) {
-  api.versionsFrom('3.0-beta.0');
-  api.use(['blaze@3.0.0-alpha300.17', 'templating@1.4.4-alpha300.17'], 'client', { weak: true });
-  api.use('mongo', 'client');
-  api.use('underscore', 'server');
+  api.versionsFrom('3.0');
+  api.use('mongo@2.0.0', 'client');
+  api.use('underscore@1.6.1', 'server');
   api.addFiles('client/publish-counts.js', 'client');
   api.addFiles('server/publish-counts.js', 'server');
   api.export('Counts');
   api.export('publishCount', 'server');
 });
 
-// meteor test-packages tmeasday:publish-counts --driver-package test-in-console
+// meteor test-packages akyma:publish-counts --driver-package test-in-console
 Package.onTest(function (api) {
   api.use([
-    'tmeasday:publish-counts',
+    'akyma:publish-counts',
     'underscore',
     'tinytest',
     'mongo',
